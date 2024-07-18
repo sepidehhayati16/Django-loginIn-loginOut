@@ -11,6 +11,11 @@
     {{ message }}
   {% endfor %}
 {% endif %}
+
+
+
+
+
 <!-- Login 11 - Bootstrap Brain Component -->
 <section class="py-3 py-md-5 py-xl-8">
   <div class="container">
@@ -101,4 +106,11 @@
     </div>
   </div>
 </section>
+<!-- Logout Button -->
+{% if user.is_authenticated %}
+        <form action="/account/logout/" method="post">
+          {% csrf_token %}
+          <button class="" type="submit" style="background: indianred" >Log out</button>
+        </form>
 
+{% endif %}
